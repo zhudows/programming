@@ -1,0 +1,9 @@
+#空元组
+tuple_1=()
+print(tuple_1)
+#一个元素的元组
+tuple_2=(1,)
+print(tuple_2)
+#非空元组
+tuple_3=(1,2,3,4,5,6,7,8)
+print(tuple_3)

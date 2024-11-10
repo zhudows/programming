@@ -1,0 +1,24 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "${workspaceFolder}/**"
+                // E:\software\Dev-Cpp\MinGW64\lib\gcc\x86_64-w64-mingw32\4.8.1\include
+                // E:\software\Dev-Cpp\MinGW64\lib\gcc\x86_64-w64-mingw32\4.8.1\include-fixed
+                // E:\software\Dev-Cpp\MinGW64\lib\gcc\x86_64-w64-mingw32\4.8.1\install-tools
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "windowsSdkVersion": "10.0.22621.0",
+            "compilerPath": "cl.exe",
+            "cStandard": "c23",
+            "cppStandard": "c++23",
+            "intelliSenseMode": "windows-msvc-x64"
+        }
+    ],
+    "version": 4
+}
