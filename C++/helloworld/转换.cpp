@@ -1,101 +1,121 @@
+#include <bits/stdc++.h>
 #include <iostream>
 #include <bitset>
 #include <cmath>
 #include <cstdio>
-#include <string>
+#include <stdio.h>
 #include <Windows.h>
+#include <WinUser.h>
 #pragma comment(lib,"user32.lib")
 using namespace std;
-
-// Function to convert binary string to decimal
-int binaryToDecimal(const string& binary) {
-    int decimal = 0;
-    int length = binary.length();
-    for (int i = 0; i < length; ++i) {
-        if (binary[i] == '1') {
-            decimal += pow(2, length - 1 - i);
-        }
-    }
-    return decimal;
-}
-
-// Function to perform addition in binary
-int addBinaryNumbers(int count) {
-    int sum = 0;
-    string binary;
-    for (int i = 0; i < count; ++i) {
-        cout << "Enter a binary number: ";
-        cin >> binary;
-        sum += binaryToDecimal(binary);
-    }
-    return sum;
-}
-
-// Function to perform subtraction in binary
-int subtractBinaryNumbers(int count, int minuend) {
-    string binary;
-    int subtrahend = 0;
-    for (int i = 0; i < count; ++i) {
-        cout << "Enter a binary number: ";
-        cin >> binary;
-        subtrahend += binaryToDecimal(binary);
-    }
-    return minuend - subtrahend;
-}
-
-// Function to convert decimal to binary using bitset
-string decimalToBinary(int decimal) {
-    return bitset<32>(decimal).to_string();
-}
-
-// Function to verify a binary number
-void verifyBinaryNumber(const string& binary) {
-    int decimal = binaryToDecimal(binary);
-    cout << "Decimal equivalent: " << decimal << endl;
-}
-
 int main() {
-    if (MessageBoxW(NULL, L"Do you want to convert binary to decimal?", L"Binary to Decimal Converter", MB_YESNO | MB_ICONQUESTION | MB_DEFBUTTON1 | MB_SYSTEMMODAL) == IDYES) {
-        string binary;
-        int decimal, choice, count, result;
-
-        cout << "Enter a binary number: ";
-        cin >> binary;
-        decimal = binaryToDecimal(binary);
-        cout << "Decimal equivalent: " << decimal << endl;
-
-        cout << "Enter a decimal number: ";
-        cin >> decimal;
-        cout << "Octal equivalent: " << oct << decimal << endl;
-        cout << "Decimal equivalent: " << dec << decimal << endl;
-        cout << "Hexadecimal equivalent: " << hex << decimal << endl;
-        cout << "Binary equivalent: " << decimalToBinary(decimal) << endl;
-
-        if (MessageBoxW(NULL, L"Do you want to perform binary operations?", L"Binary Operations", MB_YESNOCANCEL | MB_ICONQUESTION) == IDYES) {
-            if (MessageBoxW(NULL, L"Do you want to add binary numbers?", L"Binary Addition", MB_YESNOCANCEL | MB_ICONQUESTION | MB_SYSTEMMODAL) == IDYES) {
-                cout << "Enter the number of binary numbers to add: ";
-                cin >> count;
-                result = addBinaryNumbers(count);
-                cout << "Sum in binary: " << decimalToBinary(result) << endl;
-            } else {
-                cout << "Enter the number of binary numbers to subtract: ";
-                cin >> count;
-                cout << "Enter the minuend (in decimal): ";
-                cin >> result;
-                result = subtractBinaryNumbers(count, result);
-                cout << "Difference in binary: " << decimalToBinary(result) << endl;
+    if (MessageBoxW(NULL, L"是否执行进制转换程序?", L"进制转换",MB_YESNO|MB_ICONQUESTION|MB_DEFBUTTON1|MB_SYSTEMMODAL)==IDYES) {
+        int numberin=0,geshu=0,jiashu=0,jiashu1=0,he=0,n=0,n1=0,n2=0,m=0,yan1=0,q=0;
+        string s,m1,er,yansuan,yan;
+        cout<<"请输入一个二进制数>>>";
+        cin>>er;
+        int len=er.length();
+            for(int i=0;i<len;++i) {
+                if(er[i]=='1') {
+                n+=pow(2,len-1-i);
+                }
             }
-        }
-
-        if (MessageBoxW(NULL, L"Do you want to verify a binary number?", L"Binary Verification", MB_YESNO | MB_ICONQUESTION) == IDYES) {
-            cout << "Enter a binary number to verify: ";
-            cin >> binary;
-            verifyBinaryNumber(binary);
+        cout<<"本数的10进制:"<<n<<endl;
+        cout<<"请输入一个十进制数>>>";
+        cin>>numberin;
+        cout <<"本数的8进制:" << std::oct << numberin << endl;  
+        cout <<"本数的10进制:" << std::dec << numberin << endl;  
+        cout <<"本数的16进制:" << std::hex << numberin << endl;
+        cout <<"本数的2进制: " <<std::bitset<20>(numberin) << endl;
+        n=0;
+        if (MessageBoxW(NULL,L"是否进行加减法运算",L"进制转换",MB_YESNOCANCEL|MB_ICONQUESTION)==IDYES) {
+            q=MessageBoxW(NULL,L"请选择运行运算的类型\n  “是”加  “否”减",L"进制转换",MB_YESNOCANCEL|MB_ICONQUESTION|MB_SYSTEMMODAL);
+            if (q==IDYES) {
+                cout<<"请输入加数的个数>>>";
+                cin>>geshu;
+                q=MessageBoxW(NULL,L"请选择运行运算的类型\n  “是”2  “否”10",L"进制转换",MB_YESNOCANCEL|MB_ICONQUESTION|MB_SYSTEMMODAL);
+                if (q==IDYES) {
+                for (int j=0;j<geshu;j++) {
+                    cout<<"请输入加数(二进制)>>>";
+                    cin>>s;
+                    int len=s.length();
+                    for(int i=0;i<len;++i) {
+                        if(s[i]=='1') {
+                            n+=pow(2,len-1-i);
+                        }
+                    }
+                    n2=n;
+                    n1+=n2;
+                    n=0;
+                }
+                cout<<"结果(二进制):"<<std::bitset<20>(n1)<<endl;
+            } else if (q==IDNO) {
+                for (int j=0;j<geshu;j++) {
+                    cout<<"请输入加数(十进制)>>>";
+                    cin>>n;
+                    n2=n;
+                    n1+=n2;
+                    n=0;
+                }
+                cout<<"结果(二进制):"<<std::bitset<20>(n1)<<endl;
+            }
+            } else if (q==IDNO) {
+                cout<<"请输入减数的个数>>>";
+                cin>>geshu;
+                geshu=geshu-1;
+                q=MessageBoxW(NULL,L"请选择运行运算的类型\n  “是”2  “否”10",L"进制转换",MB_YESNOCANCEL|MB_ICONQUESTION|MB_SYSTEMMODAL);
+                if (q==IDYES) {
+                    cout<<"请输入减数(二进制)>>>";
+                    cin>>m1;
+                    int len=m1.length();
+                        for(int i=0;i<len;++i) {
+                            if(m1[i]=='1'){
+                                m+=pow(2,len-1-i);
+                            }
+                        }
+                    for (int j=0;j<geshu;j++) {
+                        cout<<"请输入减数(二进制)>>>";
+                        cin>>s;
+                        int len=s.length();
+                        for(int i=0;i<len;++i) {
+                            if(s[i]=='1'){
+                                n+=pow(2,len-1-i);
+                            }
+                        }
+                        m-=n;
+                    }
+                    cout<<"结果(二进制):"<<std::bitset<20>(m)<<endl;
+            } else if (q==IDNO) {
+                n1=0;
+                cout<<"请输入被减数(十进制)>>>";
+                cin>>m;
+                for (int j=0;j<geshu;j++) {
+                    cout<<"请输入减数(十进制)>>>";
+                    cin>>n;
+                    m-=n;
+                }
+                cout<<"结果(二进制):"<<std::bitset<20>(m)<<endl;
+                }
+            }
+            q=MessageBoxW(NULL,L"是否验算?",L"进制转换",MB_YESNO|MB_ICONQUESTION);
+            if (q==IDYES) {
+                cout<<"请输入一个2进制数>>>";
+                cin>>yan;
+                int len1=yan.length();
+                for(int i=0;i<len1;++i) {
+                    if(yan[i]=='1'){
+                        yan1+=pow(2,len1-1-i);
+                    }
+                }
+                    cout<<"验算结果是(十进制):"<<std::dec<<yan1<<endl;
+                } else {
+                    MessageBoxW(NULL,L"程序已结束，请退出程序",L"进制转换",MB_OK|MB_ICONEXCLAMATION);
+                }        
         } else {
-            MessageBoxW(NULL, L"Operation cancelled by user.", L"Binary Verification", MB_OK | MB_ICONEXCLAMATION);
+            MessageBoxW(NULL,L"程序已结束，请退出程序",L"进制转换",MB_OK|MB_ICONEXCLAMATION);
         }
-    } else {
-        MessageBoxW(NULL, L"Operation cancelled by user.", L"Binary to Decimal Converter", MB_OK | MB_ICONEXCLAMATION);
-    }
+        } else {
+        MessageBoxW(NULL,L"程序已结束，请退出程序",L"进制转换",MB_OK|MB_ICONEXCLAMATION);
+        }
     return 0;
 }
