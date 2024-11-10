@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+#include <bits/stdc++.h>
 #include <iostream>
 #include <bitset>
 #include <cmath>
@@ -9,10 +10,10 @@
 #pragma comment(lib,"user32.lib")
 using namespace std;
 int main() {
-    if (MessageBoxW(NULL, L"ÊÇ·ñÖ´ĞĞ½øÖÆ×ª»»³ÌĞò?", L"½øÖÆ×ª»»",MB_YESNO|MB_ICONQUESTION|MB_DEFBUTTON1|MB_SYSTEMMODAL)==IDYES) {
+    if (MessageBoxW(NULL, L"æ˜¯å¦æ‰§è¡Œè¿›åˆ¶è½¬æ¢ç¨‹åº?", L"è¿›åˆ¶è½¬æ¢",MB_YESNO|MB_ICONQUESTION|MB_DEFBUTTON1|MB_SYSTEMMODAL)==IDYES) {
         int numberin=0,geshu=0,jiashu=0,jiashu1=0,he=0,n=0,n1=0,n2=0,m=0,yan1=0,q=0;
         string s,m1,er,yansuan,yan;
-        cout<<"ÇëÊäÈëÒ»¸ö¶ş½øÖÆÊı>>>";
+        cout<<"è¯·è¾“å…¥ä¸€ä¸ªäºŒè¿›åˆ¶æ•°>>>";
         cin>>er;
         int len=er.length();
             for(int i=0;i<len;++i) {
@@ -20,23 +21,23 @@ int main() {
                 n+=pow(2,len-1-i);
                 }
             }
-        cout<<"±¾ÊıµÄ10½øÖÆ:"<<n<<endl;
-        cout<<"ÇëÊäÈëÒ»¸öÊ®½øÖÆÊı>>>";
+        cout<<"æœ¬æ•°çš„10è¿›åˆ¶:"<<n<<endl;
+        cout<<"è¯·è¾“å…¥ä¸€ä¸ªåè¿›åˆ¶æ•°>>>";
         cin>>numberin;
-        cout <<"±¾ÊıµÄ8½øÖÆ:" << std::oct << numberin << endl;  
-        cout <<"±¾ÊıµÄ10½øÖÆ:" << std::dec << numberin << endl;  
-        cout <<"±¾ÊıµÄ16½øÖÆ:" << std::hex << numberin << endl;
-        cout <<"±¾ÊıµÄ2½øÖÆ: " <<std::bitset<20>(numberin) << endl;
+        cout <<"æœ¬æ•°çš„8è¿›åˆ¶:" << std::oct << numberin << endl;  
+        cout <<"æœ¬æ•°çš„10è¿›åˆ¶:" << std::dec << numberin << endl;  
+        cout <<"æœ¬æ•°çš„16è¿›åˆ¶:" << std::hex << numberin << endl;
+        cout <<"æœ¬æ•°çš„2è¿›åˆ¶: " <<std::bitset<20>(numberin) << endl;
         n=0;
-        if (MessageBoxW(NULL,L"ÊÇ·ñ½øĞĞ¼Ó¼õ·¨ÔËËã",L"½øÖÆ×ª»»",MB_YESNOCANCEL|MB_ICONQUESTION)==IDYES) {
-            q=MessageBoxW(NULL,L"ÇëÑ¡ÔñÔËĞĞÔËËãµÄÀàĞÍ\n  ¡°ÊÇ¡±¼Ó  ¡°·ñ¡±¼õ",L"½øÖÆ×ª»»",MB_YESNOCANCEL|MB_ICONQUESTION|MB_SYSTEMMODAL);
+        if (MessageBoxW(NULL,L"æ˜¯å¦è¿›è¡ŒåŠ å‡æ³•è¿ç®—",L"è¿›åˆ¶è½¬æ¢",MB_YESNOCANCEL|MB_ICONQUESTION)==IDYES) {
+            q=MessageBoxW(NULL,L"è¯·é€‰æ‹©è¿è¡Œè¿ç®—çš„ç±»å‹\n  â€œæ˜¯â€åŠ   â€œå¦â€å‡",L"è¿›åˆ¶è½¬æ¢",MB_YESNOCANCEL|MB_ICONQUESTION|MB_SYSTEMMODAL);
             if (q==IDYES) {
-                cout<<"ÇëÊäÈë¼ÓÊıµÄ¸öÊı>>>";
+                cout<<"è¯·è¾“å…¥åŠ æ•°çš„ä¸ªæ•°>>>";
                 cin>>geshu;
-                q=MessageBoxW(NULL,L"ÇëÑ¡ÔñÔËĞĞÔËËãµÄÀàĞÍ\n  ¡°ÊÇ¡±2  ¡°·ñ¡±10",L"½øÖÆ×ª»»",MB_YESNOCANCEL|MB_ICONQUESTION|MB_SYSTEMMODAL);
+                q=MessageBoxW(NULL,L"è¯·é€‰æ‹©è¿è¡Œè¿ç®—çš„ç±»å‹\n  â€œæ˜¯â€2  â€œå¦â€10",L"è¿›åˆ¶è½¬æ¢",MB_YESNOCANCEL|MB_ICONQUESTION|MB_SYSTEMMODAL);
                 if (q==IDYES) {
                 for (int j=0;j<geshu;j++) {
-                    cout<<"ÇëÊäÈë¼ÓÊı(¶ş½øÖÆ)>>>";
+                    cout<<"è¯·è¾“å…¥åŠ æ•°(äºŒè¿›åˆ¶)>>>";
                     cin>>s;
                     int len=s.length();
                     for(int i=0;i<len;++i) {
@@ -48,24 +49,24 @@ int main() {
                     n1+=n2;
                     n=0;
                 }
-                cout<<"½á¹û(¶ş½øÖÆ):"<<std::bitset<20>(n1)<<endl;
+                cout<<"ç»“æœ(äºŒè¿›åˆ¶):"<<std::bitset<20>(n1)<<endl;
             } else if (q==IDNO) {
                 for (int j=0;j<geshu;j++) {
-                    cout<<"ÇëÊäÈë¼ÓÊı(Ê®½øÖÆ)>>>";
+                    cout<<"è¯·è¾“å…¥åŠ æ•°(åè¿›åˆ¶)>>>";
                     cin>>n;
                     n2=n;
                     n1+=n2;
                     n=0;
                 }
-                cout<<"½á¹û(¶ş½øÖÆ):"<<std::bitset<20>(n1)<<endl;
+                cout<<"ç»“æœ(äºŒè¿›åˆ¶):"<<std::bitset<20>(n1)<<endl;
             }
             } else if (q==IDNO) {
-                cout<<"ÇëÊäÈë¼õÊıµÄ¸öÊı>>>";
+                cout<<"è¯·è¾“å…¥å‡æ•°çš„ä¸ªæ•°>>>";
                 cin>>geshu;
                 geshu=geshu-1;
-                q=MessageBoxW(NULL,L"ÇëÑ¡ÔñÔËĞĞÔËËãµÄÀàĞÍ\n  ¡°ÊÇ¡±2  ¡°·ñ¡±10",L"½øÖÆ×ª»»",MB_YESNOCANCEL|MB_ICONQUESTION|MB_SYSTEMMODAL);
+                q=MessageBoxW(NULL,L"è¯·é€‰æ‹©è¿è¡Œè¿ç®—çš„ç±»å‹\n  â€œæ˜¯â€2  â€œå¦â€10",L"è¿›åˆ¶è½¬æ¢",MB_YESNOCANCEL|MB_ICONQUESTION|MB_SYSTEMMODAL);
                 if (q==IDYES) {
-                    cout<<"ÇëÊäÈë¼õÊı(¶ş½øÖÆ)>>>";
+                    cout<<"è¯·è¾“å…¥å‡æ•°(äºŒè¿›åˆ¶)>>>";
                     cin>>m1;
                     int len=m1.length();
                         for(int i=0;i<len;++i) {
@@ -74,7 +75,7 @@ int main() {
                             }
                         }
                     for (int j=0;j<geshu;j++) {
-                        cout<<"ÇëÊäÈë¼õÊı(¶ş½øÖÆ)>>>";
+                        cout<<"è¯·è¾“å…¥å‡æ•°(äºŒè¿›åˆ¶)>>>";
                         cin>>s;
                         int len=s.length();
                         for(int i=0;i<len;++i) {
@@ -84,22 +85,22 @@ int main() {
                         }
                         m-=n;
                     }
-                    cout<<"½á¹û(¶ş½øÖÆ):"<<std::bitset<20>(m)<<endl;
+                    cout<<"ç»“æœ(äºŒè¿›åˆ¶):"<<std::bitset<20>(m)<<endl;
             } else if (q==IDNO) {
                 n1=0;
-                cout<<"ÇëÊäÈë±»¼õÊı(Ê®½øÖÆ)>>>";
+                cout<<"è¯·è¾“å…¥è¢«å‡æ•°(åè¿›åˆ¶)>>>";
                 cin>>m;
                 for (int j=0;j<geshu;j++) {
-                    cout<<"ÇëÊäÈë¼õÊı(Ê®½øÖÆ)>>>";
+                    cout<<"è¯·è¾“å…¥å‡æ•°(åè¿›åˆ¶)>>>";
                     cin>>n;
                     m-=n;
                 }
-                cout<<"½á¹û(¶ş½øÖÆ):"<<std::bitset<20>(m)<<endl;
+                cout<<"ç»“æœ(äºŒè¿›åˆ¶):"<<std::bitset<20>(m)<<endl;
                 }
             }
-            q=MessageBoxW(NULL,L"ÊÇ·ñÑéËã?",L"½øÖÆ×ª»»",MB_YESNO|MB_ICONQUESTION);
+            q=MessageBoxW(NULL,L"æ˜¯å¦éªŒç®—?",L"è¿›åˆ¶è½¬æ¢",MB_YESNO|MB_ICONQUESTION);
             if (q==IDYES) {
-                cout<<"ÇëÊäÈëÒ»¸ö2½øÖÆÊı>>>";
+                cout<<"è¯·è¾“å…¥ä¸€ä¸ª2è¿›åˆ¶æ•°>>>";
                 cin>>yan;
                 int len1=yan.length();
                 for(int i=0;i<len1;++i) {
@@ -107,15 +108,15 @@ int main() {
                         yan1+=pow(2,len1-1-i);
                     }
                 }
-                    cout<<"ÑéËã½á¹ûÊÇ(Ê®½øÖÆ):"<<std::dec<<yan1<<endl;
+                    cout<<"éªŒç®—ç»“æœæ˜¯(åè¿›åˆ¶):"<<std::dec<<yan1<<endl;
                 } else {
-                    MessageBoxW(NULL,L"³ÌĞòÒÑ½áÊø£¬ÇëÍË³ö³ÌĞò",L"½øÖÆ×ª»»",MB_OK|MB_ICONEXCLAMATION);
+                    MessageBoxW(NULL,L"ç¨‹åºå·²ç»“æŸï¼Œè¯·é€€å‡ºç¨‹åº",L"è¿›åˆ¶è½¬æ¢",MB_OK|MB_ICONEXCLAMATION);
                 }        
         } else {
-            MessageBoxW(NULL,L"³ÌĞòÒÑ½áÊø£¬ÇëÍË³ö³ÌĞò",L"½øÖÆ×ª»»",MB_OK|MB_ICONEXCLAMATION);
+            MessageBoxW(NULL,L"ç¨‹åºå·²ç»“æŸï¼Œè¯·é€€å‡ºç¨‹åº",L"è¿›åˆ¶è½¬æ¢",MB_OK|MB_ICONEXCLAMATION);
         }
         } else {
-        MessageBoxW(NULL,L"³ÌĞòÒÑ½áÊø£¬ÇëÍË³ö³ÌĞò",L"½øÖÆ×ª»»",MB_OK|MB_ICONEXCLAMATION);
+        MessageBoxW(NULL,L"ç¨‹åºå·²ç»“æŸï¼Œè¯·é€€å‡ºç¨‹åº",L"è¿›åˆ¶è½¬æ¢",MB_OK|MB_ICONEXCLAMATION);
         }
     return 0;
 }
