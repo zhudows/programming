@@ -18,6 +18,6 @@ int main() {
 			return 0; 
 		}
 	}
-	cout<<"-1"<<endl;
+	cout<<-1<<endl;
 	return 0;
 }
